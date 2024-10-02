@@ -8,27 +8,28 @@ text = """
 
 > **Awareness Training** Merupakan program pelatihan yang dirancang oleh Akasata Cybertech untuk meningkatkan kesadaran dan pemahaman pengguna mengenai keamanan siber. Program ini bertujuan untuk membekali individu dengan pengetahuan yang diperlukan untuk mengenali ancaman potensial, melindungi data pribadi, dan berperan aktif dalam menjaga keamanan sistem di lingkungan digital mereka. Dengan pendekatan yang interaktif dan relevan, pelatihan ini memastikan bahwa setiap pengguna lebih peka terhadap risiko keamanan dan mampu mengambil langkah proaktif untuk melindungi informasi penting
 
+Berikut Penjelasan Detail Mengenain Produk **[Logpoint XDR](Product%20List/Logpoint%20XDR/README.md)**
 
 """
-
-def get_regex_matches(matches):
-    class iContent:
+class iContent:
         def __init__(self, match):
             self.prefix = match.group('prefix')
             self.body = match.group('body')
             self.postfix = match.group('postfix')
-            self.content = match.group('content')
-            # if self.prefix is None or self.body is None or self.postfix is None:
-                
+            if self.prefix is None or self.body is None or self.postfix is None:
+                self.content = match.group('content')
+
+def get_regex_matches(matches):
+    
     for match in matches:
-        item = iContent(match=match)
-        # content: str = item.prefix + item.body + item.postfix
-        content2: str = item.content
-        return "Oke"
-        if content2 == None:
-            return "No Content Available"
+        content: str = iContent(match=match).content
+        if content == None:
+            content: str = iContent(match=match).prefix + iContent(match=match).body + iContent(match=match).postfix
+            return content
         else:
-            return "oke"
+            return content
+        
+        
         # if content is None:
         #     sys.exit("if logic run")
         #     content: str = item.content
@@ -72,18 +73,18 @@ def get_prefix1():
     # ?P<prefix>
     # ?P<body>
     # ?P<postfix>
-    regex_pattern = re.compile(r'^(?P<content>(Berikut).(Penjelasan).(Detail).(Mengenai).(Produk).*)', re.MULTILINE)
+    regex_pattern = re.compile(r'^(?P<content>(\w*).(\w*).(\w*).(\w*).(\w*).((\*\*).*(\*\*)))', re.MULTILINE)
     pattern = regex_pattern
     
     # do regex pattern matcher
-    match = pattern.match(text)
 
-    if match:
+    matchCheck = pattern.search(text)
+    if matchCheck:
         # do looping for fetching the contents 
         matches = pattern.finditer(text)
-        for match in matches:
-            print(match)
-        print(matches)
+        # for match in matches:
+        #     print(match)
+        # print(matches)
         result = get_regex_matches(matches=matches)
         sys.exit(result)
     else:
@@ -101,4 +102,4 @@ def get_prefix2():
     return get_regex_matches(matches=matches)
 
 # print(get_desc())
-print(get_prefix1())
+get_prefix1()
