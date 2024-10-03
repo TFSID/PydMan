@@ -168,21 +168,28 @@ try:
     doc_structure.description = get_desc()
     doc_structure.prefix1 = get_prefix1()
 
+    # title = [i for i in doc_structure.title]
     title = doc_structure.title
     description = doc_structure.description
     prefix1 = doc_structure.prefix1
 
+    # slices = []
     result = {
          "title": title,
          "description": description,
          "prefix1": prefix1
     }
+    # slices.append(result)
 
-    result_json = json.dumps(result)
+    with open('file.json','w') as file:
+        file.write(json.dumps(result,indent=4))
+    # print(slices)
+    # result_json = print([slc for slc in slices])
     # print(result_json)
-    print(title[0])
-    print(title[1])
-    print(title[2])
+    # print(title[0])
+    # print(title2)
+    # print(title[1])
+    # print(title[2])
     # print(description)
 except Exception as err:
     print(err)
