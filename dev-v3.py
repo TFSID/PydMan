@@ -1,9 +1,6 @@
 import re
 import os
 import sys
-import json
-
-from typing import List
 
 
 text = """
@@ -68,12 +65,6 @@ class iContent2:
         def __init__(self, match):
             self.content = match.group('content')
 
-class iDocStructure:
-    def __init__(self):
-        self.title: List[str] = []
-        self.description: List[str] = []
-        self.prefix1: List[str] = []
-
 def get_regex_matches(matches):
         content_list = []
         for match in matches:
@@ -86,7 +77,8 @@ def get_regex_matches(matches):
                     content_list.append(content)
                 except Exception as err:
                     sys.exit(err)
-        return content_list
+        for result in content_list:
+             print(result)
 
 def get_title():
     # gex group name: 
@@ -162,27 +154,8 @@ def get_prefix2():
 
 try:
     print("\nGetting Data From Source...\n")
-    
-    doc_structure = iDocStructure()
-    doc_structure.title = get_title()
-    doc_structure.description = get_desc()
-    doc_structure.prefix1 = get_prefix1()
-
-    title = doc_structure.title
-    description = doc_structure.description
-    prefix1 = doc_structure.prefix1
-
-    result = {
-         "title": title,
-         "description": description,
-         "prefix1": prefix1
-    }
-
-    result_json = json.dumps(result)
-    # print(result_json)
-    print(title[0])
-    print(title[1])
-    print(title[2])
-    # print(description)
+    print(get_title())
+    print(get_desc())
+    print(get_prefix1())
 except Exception as err:
     print(err)
