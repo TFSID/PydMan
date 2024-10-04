@@ -114,7 +114,7 @@ def get_desc():
     # ?P<prefix>
     # ?P<body>
     # ?P<postfix>
-    regex_pattern = re.compile(r'^(?P<prefix>>\s?\S)(?P<body>.*)(?P<postfix>\n)', re.MULTILINE)
+    regex_pattern = re.compile(r'^(?P<prefix>>\s?\w)(?P<body>.*)(?P<postfix>\n)', re.MULTILINE)
     pattern = regex_pattern
     
     # do regex pattern matcher
