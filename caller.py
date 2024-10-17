@@ -1,7 +1,7 @@
 import json
 import re
 
-from dev import iDocStructure, get_all_link, get_prefix1, get_desc, get_title
+from dev import iDocStructure, get_all_link, get_prefix1, get_desc, get_title, replace_all_link
 
 text = """
 # **Awarness Training** [x]
@@ -139,50 +139,52 @@ Berikut Beberapa Rancangan Untuk Menuliskan [Panduan Terkait Produk Incident Adv
 
 regex_readme_links = re.compile(r'(?P<content>(?P<LinkName>\[.*\])(?P<Link>\(.*\)))', re.MULTILINE)
 
+replace_all_link(pattern=regex_readme_links,source=text)
 
-try:
-    print("\nGetting Data From Source...\n")
+
+# try:
+#     print("\nGetting Data From Source...\n")
     
-    doc_structure = iDocStructure()
-    doc_structure.title = get_title()
-    doc_structure.description = get_desc()
-    doc_structure.prefix1 = get_prefix1()
-    doc_structure.links = get_all_link(pattern=regex_readme_links, source=text)
-    # doc_structure.link1 = get_link1()
-    # doc_structure.link2 = get_link2()
+#     doc_structure = iDocStructure()
+#     doc_structure.title = get_title()
+#     doc_structure.description = get_desc()
+#     doc_structure.prefix1 = get_prefix1()
+#     doc_structure.links = get_all_link(pattern=regex_readme_links, source=text)
+#     # doc_structure.link1 = get_link1()
+#     # doc_structure.link2 = get_link2()
 
-    # title = [i for i in doc_structure.title]
-    title = doc_structure.title
-    description = doc_structure.description
-    prefix1 = doc_structure.prefix1
-    links = doc_structure.links
-    # link1 = doc_structure.link1
-    # link2 = doc_structure.link2
+#     # title = [i for i in doc_structure.title]
+#     title = doc_structure.title
+#     description = doc_structure.description
+#     prefix1 = doc_structure.prefix1
+#     links = doc_structure.links
+#     # link1 = doc_structure.link1
+#     # link2 = doc_structure.link2
 
-    # slices = []
-    result = {
-         "title": title,
-         "description": description,
-         "prefix1": prefix1,
-         "links": links
-    }
-    # slices.append(result)
+#     # slices = []
+#     result = {
+#          "title": title,
+#          "description": description,
+#          "prefix1": prefix1,
+#          "links": links
+#     }
+#     # slices.append(result)
 
-    f_name = "file.json"
-    print('Writting File Into ',f_name)
-    with open(f_name,'w') as file:
-        try:
-            file.write(json.dumps(result,indent=4))
-            print('file writted to ',f_name)
-        except Exception as err:
-            print(err)
-    # print(slices)
-    # result_json = print([slc for slc in slices])
-    # print(result_json)
-    # print(title[0])
-    # print(title2)
-    # print(title[1])
-    # print(title[2])
-    # print(description)
-except Exception as err:
-    print(err)
+#     f_name = "file.json"
+#     print('Writting File Into ',f_name)
+#     with open(f_name,'w') as file:
+#         try:
+#             file.write(json.dumps(result,indent=4))
+#             print('file writted to ',f_name)
+#         except Exception as err:
+#             print(err)
+#     # print(slices)
+#     # result_json = print([slc for slc in slices])
+#     # print(result_json)
+#     # print(title[0])
+#     # print(title2)
+#     # print(title[1])
+#     # print(title[2])
+#     # print(description)
+# except Exception as err:
+#     print(err)

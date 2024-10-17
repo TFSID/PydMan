@@ -46,18 +46,12 @@ def links_change(source_list,last_word_change,last_character_remove):
         if parts[-2] == extracted_text:
             # print(extracted_text)
             parts[-1] = last_word_change
-        else:
-            continue
-        # print(parts[-1])
-        # print(parts)
-
-        # sys.exit(print(len(links)))
-        # sys.exit(parts)
-        array_val = 0
-        if array_val < len(source_list):
             link_result = f'{parts[0]}/{parts[1]}/{parts[2]})'
             result_list.append(link_result)
-            array_val += 1
+        else:
+            link_result = f'{parts[0]}/{parts[1]}/{parts[2]}'
+            result_list.append(link_result)
+            
     f_name = "changed_list.txt"
     with open(f_name, 'w') as fp:
         for f in result_list:

@@ -156,6 +156,18 @@ class iDocStructure:
         self.link1: List[str] = []
         self.links: List[str] = []
 
+def replace_all_link(pattern, source):
+    matchCheck = pattern.search(source)
+    if matchCheck:
+        # do looping for fetching the contents 
+
+        matches = pattern.finditer(source)
+        result = get_regex_matches(matches=matches)
+        print(matches)
+        return result
+    else:
+        sys.exit("No Pattern Matches / No Content Available")
+
 def get_all_link(pattern, source):
     regex_pattern = pattern
     pattern = regex_pattern
