@@ -1,10 +1,7 @@
-import re
-import os
-import sys
 import json
+import re
 
-from typing import List
-
+from dev import iDocStructure, get_all_link, get_prefix1, get_desc, get_title
 
 text = """
 # **Awarness Training** [x]
@@ -139,121 +136,53 @@ Berikut Beberapa Rancangan Untuk Menuliskan [Panduan Terkait Produk Incident Adv
 
 
 """
-class iContent1:
-        def __init__(self, match):
-            self.prefix = match.group('prefix')
-            self.body = match.group('body')
-            self.postfix = match.group('postfix')
-class iContent2:
-        def __init__(self, match):
-            self.content = match.group('content')
 
-class iDocStructure:
-    def __init__(self):
-        self.title: List[str] = []
-        self.description: List[str] = []
-        self.prefix1: List[str] = []
-        self.link1: List[str] = []
-        self.links: List[str] = []
+regex_readme_links = re.compile(r'(?P<content>(?P<LinkName>\[.*\])(?P<Link>\(.*\)))', re.MULTILINE)
 
-def get_all_link(pattern, source):
-    regex_pattern = pattern
-    pattern = regex_pattern
+
+try:
+    print("\nGetting Data From Source...\n")
     
-    # do regex pattern matcher
+    doc_structure = iDocStructure()
+    doc_structure.title = get_title()
+    doc_structure.description = get_desc()
+    doc_structure.prefix1 = get_prefix1()
+    doc_structure.links = get_all_link(pattern=regex_readme_links, source=text)
+    # doc_structure.link1 = get_link1()
+    # doc_structure.link2 = get_link2()
 
-    matchCheck = pattern.search(source)
-    if matchCheck:
-        # do looping for fetching the contents 
+    # title = [i for i in doc_structure.title]
+    title = doc_structure.title
+    description = doc_structure.description
+    prefix1 = doc_structure.prefix1
+    links = doc_structure.links
+    # link1 = doc_structure.link1
+    # link2 = doc_structure.link2
 
-        matches = pattern.finditer(source)
-        result = get_regex_matches(matches=matches)
-        return result
-    else:
-        sys.exit("No Pattern Matches / No Content Available")
+    # slices = []
+    result = {
+         "title": title,
+         "description": description,
+         "prefix1": prefix1,
+         "links": links
+    }
+    # slices.append(result)
 
-def get_regex_matches(matches):
-        content_list = []
-        for match in matches:
-            try:
-                content: str = iContent1(match=match).prefix + iContent1(match=match).body + iContent1(match=match).postfix
-                content_list.append(content) 
-            except Exception as err:
-                try:
-                    content: str = iContent2(match=match).content
-                    content_list.append(content)
-                except Exception as err:
-                    sys.exit(err)
-        return content_list
-
-def get_title():
-    # gex group name: 
-    # ?P<prefix>
-    # ?P<body>
-    # ?P<postfix>
-    # OR use ?P<content> instead for all in one line groups
-    regex_pattern = re.compile(r'^(?P<prefix>\#\s\*\*)(?P<body>.+?)(?P<postfix>\*\*\s\[x\]?.*?\n)', re.MULTILINE)
-    pattern = regex_pattern
-    
-    # do regex pattern matcher
-
-    matchCheck = pattern.search(text)
-    if matchCheck:
-        # do looping for fetching the contents 
-
-        matches = pattern.finditer(text)
-        result = get_regex_matches(matches=matches)
-        return result
-    else:
-        sys.exit("No Pattern Matches / No Content Available")
-
-def get_desc():
-    # Required regex group name: 
-    # ?P<prefix>
-    # ?P<body>
-    # ?P<postfix>
-    regex_pattern = re.compile(r'^(?P<prefix>>\s?\w)(?P<body>.*)(?P<postfix>\n)', re.MULTILINE)
-    pattern = regex_pattern
-    
-    # do regex pattern matcher
-
-    matchCheck = pattern.search(text)
-    if matchCheck:
-        # do looping for fetching the contents 
-
-        matches = pattern.finditer(text)
-        result = get_regex_matches(matches=matches)
-        return result
-    else:
-        sys.exit("No Pattern Matches / No Content Available")
-
-def get_prefix1():
-    # Required regex group name: 
-    # ?P<prefix>
-    # ?P<body>
-    # ?P<postfix>
-    regex_pattern = re.compile(r'^(?P<content>(\w*).(\S\w*).(\w*).(\w*).(\w*).((\*\*).*(\*\*)))', re.MULTILINE)
-    pattern = regex_pattern
-    
-    # do regex pattern matcher
-
-    matchCheck = pattern.search(text)
-    if matchCheck:
-
-        # do looping for fetching the contents 
-        matches = pattern.finditer(text)
-        result = get_regex_matches(matches=matches)
-        return result
-    else:
-        sys.exit("No Pattern Matches / No Content Available")
-
-def get_prefix2():
-    # Required regex group name: 
-    # ?P<prefix>
-    # ?P<body>
-    # ?P<postfix>
-    regex_pattern = re.compile(r'{regex pattern}', re.MULTILINE)
-    pattern = regex_pattern
-
-    matches = pattern.finditer(text)
-    return get_regex_matches(matches=matches)
+    f_name = "file.json"
+    print('Writting File Into ',f_name)
+    with open(f_name,'w') as file:
+        try:
+            file.write(json.dumps(result,indent=4))
+            print('file writted to ',f_name)
+        except Exception as err:
+            print(err)
+    # print(slices)
+    # result_json = print([slc for slc in slices])
+    # print(result_json)
+    # print(title[0])
+    # print(title2)
+    # print(title[1])
+    # print(title[2])
+    # print(description)
+except Exception as err:
+    print(err)

@@ -2,18 +2,56 @@
     "title": [
         "# **Awarness Training** [x]\n",
         "# **Implementasi UU PDP** [x]\n",
-        "# **Application Control** [x]   \n"
+        "# **Application Control** [x]   \n",
+        "# **Tunable Machine Learning** [x]\n",
+        "# **Security For Mobile** [x]\n",
+        "# **Security For Containers** [x]\n"
     ],
     "description": [
         "> Berikut Beberapa Rancangan Ide Lainnya Jika Produk Tersebut Ingin Disediakan Dalam Bentuk Software/Tools atau dapat disebut juga sebagai [Awareness Training Platform](Product%20List/Awarness%20Training/Awareness%20Training.md)\n",
         "> Produk Implementasi UU PDP merupakan solusi terintegrasi dari Akasata Cybertech yang dirancang untuk membantu organisasi memenuhi persyaratan yang diatur dalam Undang-Undang Perlindungan Data Pribadi (UU PDP).Tujuannya adalah memastikan kepatuhan terhadap regulasi terkait keamanan dan privasi data, serta membantu organisasi mengelola risiko keamanan siber terkait perlindungan informasi pribadi.\n",
         "> Akasata Cybertech juga menawarkan beberapa solusi software dan tools untuk Implementasi UU PDP.\n",
         "> Berikut Beberapa Rancangan Ide Lainnya Jika Produk Tersebut Ingin Disediakan Dalam Bentuk Software/Tools atau dapat disebut juga sebagai [PDP Suite](Product%20List/Implementasi%20UU%20PDP/Implementasi%20UU%20PDP.md)\n",
-        "> Produk **Application Control** adalah layanan yang disediakan oleh Akasata Cybertech untuk memantau dan mengamankan aktivitas aplikasi yang digunakan pada endpoint, aplikasi berbasis web, dan cloud. Layanan ini memungkinkan penerapan metode seperti Whitelisting, Blacklisting, serta pengontrolan sub-fungsi aplikasi melalui pendekatan Granular Least Privilege. Hal ini membantu memastikan bahwa hanya aplikasi dan fungsi yang sah dapat dieksekusi, dengan mempertimbangkan konteks tambahan untuk meningkatkan keamanan siber di lingkungan organisasi.\n"
+        "> Produk **Application Control** adalah layanan yang disediakan oleh Akasata Cybertech untuk memantau dan mengamankan aktivitas aplikasi yang digunakan pada endpoint, aplikasi berbasis web, dan cloud. Layanan ini memungkinkan penerapan metode seperti Whitelisting, Blacklisting, serta pengontrolan sub-fungsi aplikasi melalui pendekatan Granular Least Privilege. Hal ini membantu memastikan bahwa hanya aplikasi dan fungsi yang sah dapat dieksekusi, dengan mempertimbangkan konteks tambahan untuk meningkatkan keamanan siber di lingkungan organisasi.\n",
+        "> Produk **Patch Management** adalah layanan yang ditawarkan oleh Akasata Cybertech untuk memastikan keamanan, stabilitas, dan kinerja optimal perangkat lunak.Layanan ini mencakup pengelolaan pembaruan perangkat lunak secara berkala melalui penambalan (patching) yang dirancang untuk mengatasi kerentanan keamanan, bug, serta peningkatan fungsionalitas.\n",
+        "> Produk **Security for Mobile** merupakan layanan yang disediakan oleh Akasata Cybertech untuk memantau dan mengamankan mobile endpoint seperti handphone, tablet, dan laptop. Dengan solusi ini, organisasi dapat melindungi perangkat seluler mereka dari ancaman siber, mencegah akses tidak sah, serta memastikan perlindungan data yang lebih baik dalam lingkungan bisnis mobile. Layanan ini juga mencakup pengelolaan perangkat dan aplikasi secara efektif, baik untuk penggunaan internal maupun cloud-based services.\n",
+        "> Produk **Security for Containers** adalah layanan yang disediakan oleh Akasata Cybertech untuk memantau dan mengamankan lingkungan container seperti Kubernetes, Docker, dan platform container lainnya. Solusi ini membantu organisasi dalam mengelola keamanan container dari tahap pembangunan hingga deployment, memastikan perlindungan terhadap ancaman siber, serta menjaga integritas dan ketersediaan aplikasi yang berjalan di atas platform container. Layanan ini juga mencakup pemantauan terus-menerus, deteksi ancaman, dan respons terhadap insiden keamanan di lingkungan container.\n",
+        "> Produk **Incident Advisor** adalah layanan yang disediakan oleh Akasata Cybertech untuk membantu tim keamanan (Security Team) dalam merespons dan menangani insiden yang terjadi di lingkungan IT, khususnya yang terkait dengan keamanan siber. Layanan ini dirancang untuk memberikan panduan cepat dan efisien dalam mengelola insiden keamanan, termasuk investigasi, mitigasi, dan pemulihan dari ancaman siber. Incident Advisor memastikan bahwa setiap insiden ditangani secara tepat untuk meminimalkan dampak terhadap operasi bisnis.\n"
     ],
     "prefix1": [
         "Berikut Penjelasan Detail Mengenai Produk **[Awareness Training](Product%20List/Awarness%20Training/README.md)**",
         "Berikut Penjelasan Detail Mengenai Produk **[Implementasi UU PDP](Product%20List/Implementasi%20UU%20PDP/README.md)**",
-        "Berikut Penjelasan Detail Mengenai Produk **[Application Control](Product%20List/Application%20Control/README.md)**"
+        "Berikut Penjelasan Detail Mengenai Produk **[Application Control](Product%20List/Application%20Control/README.md)**",
+        "Berikut Penjelasan Detail Mengenai Produk **[Patch Management](Product%20List/Patch%20Management/README.md)**",
+        "Berikut Penjelasan Detail Mengenai Produk **[Tunable Machine Learning](Product%20List/Tunable%20Machine%20Learning/README.md)**",
+        "Berikut Penjelasan Detail Mengenai Produk **[Security For Mobile](Product%20List/Security%20For%20Mobile/README.md)**",
+        "Berikut Penjelasan Detail Mengenai Produk **[Security For Containers](Product%20List/Security%20For%20Containers/README.md)**",
+        "Berikut Penjelasan Detail Mengenai Produk **[Incident Advisor](Product%20List/Incident%20Advisor/README.md)**"
+    ],
+    "links": [
+        "[Awareness Training](Product%20List/Awarness%20Training/README.md)",
+        "[Awareness Training Platform](Product%20List/Awarness%20Training/Awareness%20Training.md)",
+        "[Panduan Terkait Produk Awareness Training](Product%20List/Awarness%20Training/PointPenting.md)",
+        "[Implementasi UU PDP](Product%20List/Implementasi%20UU%20PDP/README.md)",
+        "[PDP Suite](Product%20List/Implementasi%20UU%20PDP/Implementasi%20UU%20PDP.md)",
+        "[Panduan Terkait Produk Implementasi UU PDP](Product%20List/Implementasi%20UU%20PDP/PointPenting.md)",
+        "[Application Control](Product%20List/Application%20Control/README.md)",
+        "[Application Control Suite](Product%20List/Application%20Control/Application%20Control.md)",
+        "[Panduan Terkait Produk Application Control](Product%20List/Application%20Control/PointPenting.md)",
+        "[Patch Management](Product%20List/Patch%20Management/README.md)",
+        "[Patch Management Suite](Product%20List/Patch%20Management/Patch%20Management.md)",
+        "[Panduan Terkait Produk Patch Management](Product%20List/Patch%20Management/PointPenting.md)",
+        "[Tunable Machine Learning](Product%20List/Tunable%20Machine%20Learning/README.md)",
+        "[Tunable Machine Learning](Product%20List/Tunable%20Machine%20Learning/Tunable%20Machine%20Learning.md)",
+        "[Panduan Terkait Produk Patch Management](Product%20List/Tunable%20Machine%20Learning/PointPenting.md)",
+        "[Security For Mobile](Product%20List/Security%20For%20Mobile/README.md)",
+        "[Security For Mobile](Product%20List/Security%20For%20Mobile/Security%20For%20Mobile.md)",
+        "[Panduan Terkait Produk Security For Mobile](Product%20List/Security%20For%20Mobile/PointPenting.md)",
+        "[Security For Containers](Product%20List/Security%20For%20Containers/README.md)",
+        "[Security For Containers](Product%20List/Security%20For%20Containers/Security%20For%20Containers.md)",
+        "[Panduan Terkait Produk Security For Containers](Product%20List/Security%20For%20Containers/PointPenting.md)",
+        "[Incident Advisor](Product%20List/Incident%20Advisor/README.md)",
+        "[Incident Advisor](Product%20List/Incident%20Advisor/Incident%20Advisor.md)",
+        "[Panduan Terkait Produk Incident Advisor](Product%20List/Incident%20Advisor/PointPenting.md)"
     ]
 }
